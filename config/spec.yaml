@@ -1,7 +1,7 @@
 alerts:
 - rule: DEPLOYMENT_FAILED
 - rule: DOMAIN_FAILED
-name: nextjs-digital-ocean-stack
+name: nextjs-digital-ocean-stack-workflow-test
 region: blr
 services:
 - build_command: npm run build
