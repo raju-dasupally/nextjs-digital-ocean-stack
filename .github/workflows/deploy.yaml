@@ -21,6 +21,13 @@ jobs:
       uses: digitalocean/action-doctl@v2
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+    
+    - name: shell commands
+      run: |
+         echo $GITHUB_WORKSPACE
+         cd $GITHUB_WORKSPACE
+         pdw
+      
 
     - name: Deploy to DigitalOcean Kubernetes
       run: doctl apps create --spec /config/spec.yml --wait 
