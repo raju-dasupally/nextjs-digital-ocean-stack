@@ -16,24 +16,6 @@ jobs:
       with:
         node-version-file: '.nvmrc'
         registry-url: https://registry.npmjs.org/
-        
-    - name:  use node.js ${{ env.NODE_VERSION }}
-      uses: actions/setup-node@v1
-      with:
-          node-version-file: '.nvmrc'
-          registry-url: https://registry.npmjs.org/
-          
-    - name: install dependencies
-      run: npm install
-      
-    - name: run build
-      run: npm run build
-
-    - name: run tests
-      run: npm test
-      env:
-        CI: true
-        FORCE_COLOR: 1
 
     - name: Update SHA
       run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/site/_meta
