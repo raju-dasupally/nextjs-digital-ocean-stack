@@ -26,7 +26,8 @@ jobs:
       run: |
          echo $GITHUB_WORKSPACE
          cd $GITHUB_WORKSPACE
-         pdw
+         pwd
+         ls -ltr
       
 
     - name: Deploy to DigitalOcean Kubernetes
