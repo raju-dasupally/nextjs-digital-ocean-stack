@@ -28,7 +28,9 @@ jobs:
          cd $GITHUB_WORKSPACE
          pwd
          ls -ltr
+         cd config
+         ls -ltr
       
 
     - name: Deploy to DigitalOcean Kubernetes
-      run: doctl apps create --spec config/spec.yml --wait 
+      run: doctl apps create --spec  $GITHUB_WORKSPACE/config/spec.yml --wait 
