@@ -30,7 +30,6 @@ jobs:
          ls -ltr
          cd config
          ls -ltr
-      
 
     - name: Deploy to DigitalOcean Kubernetes
       run: doctl apps create --spec  $GITHUB_WORKSPACE/config/spec.yaml --wait 
