@@ -1,7 +1,7 @@
 alerts:
 - rule: DEPLOYMENT_FAILED
 - rule: DOMAIN_FAILED
-name: nextjs-do-stack-workflow-test
+name: nextjs-do-workflow-test
 region: blr
 services:
 - build_command: npm run build
