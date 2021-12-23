@@ -51,12 +51,6 @@ jobs:
           npm run build 
           npm run env -- next export -o build
           
-      - name: current directory
-        run: |
-          pwd 
-          ls
-          $GITHUB_WORKSPACE
-          
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
