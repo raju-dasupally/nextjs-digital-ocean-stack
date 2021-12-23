@@ -20,7 +20,7 @@ jobs:
     - name: Install doctl
       uses: digitalocean/action-doctl@v2
       with:
-        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+        token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
 
     - name: Deploy to DigitalOcean Kubernetes
       run: doctl apps create --spec  $GITHUB_WORKSPACE/config/spec.yaml --wait
