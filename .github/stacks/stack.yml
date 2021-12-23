@@ -1,7 +1,7 @@
 version: 0.1.0                                            
 
-name: Deploy a Next.js site to GitHub pages  
-description: A stack to deploy a nextjs based website to Github Pages               
+name: Deploy a Next.js site to Digital Ocean Apps     
+description: A stack to deploy a nextjs based website to Digital Ocean Apps              
 
 branding:                                                # stack branding 
  icon: 'package'
@@ -23,7 +23,7 @@ inputs:                                                  # stack inputs
 configs:
   repo-metadata:
     parameters:
-      description: 'NextJS app on GH pages'
+      description: 'NextJS app on Digital Ocean Apps'
       secrets: 
         - name: DIGITAL_OCEAN_ACCESS_TOKEN
           value: ${{inputs.DIGITAL_OCEAN_ACCESS_TOKEN}}
