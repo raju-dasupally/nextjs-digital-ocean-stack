@@ -19,6 +19,12 @@ inputs:                                                  # stack inputs
     description: Enter the DigitalOcean Access Token. 
     is-secret: true
     required: true
+    
+  - name: CURRENT_REPOSITORY
+    description: Enter the current repository name. 
+    is-secret: true
+    required: true
+    
 
 configs:
   repo-metadata:
