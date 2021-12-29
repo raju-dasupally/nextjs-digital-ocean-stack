@@ -28,7 +28,7 @@ configs:
       - name: DIGITAL_OCEAN_ACCESS_TOKEN
         value: ${{inputs.DIGITAL_OCEAN_ACCESS_TOKEN}}
       - name: CURRENT_REPO
-        value: ${{GITHUB_REPOSITORY}}
+        value: ${{env.GITHUB_REPOSITORY}}
       topics:
       - nextjs
       - github-pages
