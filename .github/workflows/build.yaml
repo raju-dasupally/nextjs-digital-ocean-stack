@@ -16,9 +16,8 @@ jobs:
            
        - name: Display file
          run: |
-            echo ${GITHUB_WORKSPACE}
-            pwd
+            echo ${{ GITHUB_REPOSITORY }}
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
-            sed -i 's/<CURRENT_REPOSITORY_NAME>/${{ env.GITHUB_REPOSITORY }}/g' ${GITHUB_WORKSPACE}/config/spec.yaml
+            sed -i 's/<CURRENT_REPOSITORY_NAME>/${{ GITHUB_REPOSITORY }}/g' ${GITHUB_WORKSPACE}/config/spec.yaml
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
             
