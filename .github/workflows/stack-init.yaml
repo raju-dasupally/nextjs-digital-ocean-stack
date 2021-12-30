@@ -61,6 +61,11 @@ jobs:
           files: 'config/spec.yaml'
           replacements: '<CURRENT_REPOSITORY_NAME>=${{env.repo_name}}'
           
+  deploy-to-do-apps:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+          
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
