@@ -18,6 +18,6 @@ jobs:
          run: |
             echo ${GITHUB_REPOSITORY}
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
-            sed -i 's/<CURRENT_REPOSITORY_NAME>/\"${GITHUB_REPOSITORY}\"/g' ${GITHUB_WORKSPACE}/config/spec.yaml
+            sed -i 's/<CURRENT_REPOSITORY_NAME>/\${GITHUB_REPOSITORY}/g' ${GITHUB_WORKSPACE}/config/spec.yaml
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
             
