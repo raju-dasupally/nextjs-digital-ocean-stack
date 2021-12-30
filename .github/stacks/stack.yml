@@ -27,6 +27,7 @@ configs:
       secrets: 
       - name: DIGITAL_OCEAN_ACCESS_TOKEN
         value: ${{inputs.DIGITAL_OCEAN_ACCESS_TOKEN}}
+        
       topics:
       - nextjs
       - github-pages
