@@ -61,6 +61,9 @@ jobs:
       - name: Display file
         run: |
             cat config/spec.yaml
+            echo ${GITHUB_REPOSITORY}
+            echo $GITHUB_REPOSITORY
+            echo "${GITHUB_REPOSITORY}"
           
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
