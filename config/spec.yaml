@@ -8,7 +8,7 @@ services:
   environment_slug: node-js
   github:
     branch: main
-    repo: ${{secrets.CURRENT_REPOSITORY}}
+    repo: CURRENT_REPOSITORY_NAME
   http_port: 8080
   instance_count: 1
   instance_size_slug: basic-xxs
