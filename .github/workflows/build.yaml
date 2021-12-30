@@ -9,13 +9,16 @@ jobs:
     
     
     steps:
+       - name: use node.js 
+         uses: actions/checkout@v2
+         with:
+           node-version-file: '.nvmrc'
+           registry-url: https://registry.npmjs.org/
+           
        - name: Display file
          run: |
-            echo ${{ env.GITHUB_REPOSITORY }}
-            echo ${GITHUB_REPOSITORY}
-            echo $GITHUB_REPOSITORY
-            echo "${GITHUB_REPOSITORY}"
             echo ${GITHUB_WORKSPACE}
+            pwd
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
             sed -i "/<CURRENT_REPOSITORY_NAME>/${GITHUB_REPOSITORY}/" ${GITHUB_WORKSPACE}/config/spec.yaml
             cat config/spec.yaml
