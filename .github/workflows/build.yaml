@@ -1,6 +1,6 @@
 name: "build"
 env:
-  REPO: ${GITHUB_REPOSITORY}
+  REPO: ${{ env.GITHUB_REPOSITORY }}
 
 on: [push]
 
