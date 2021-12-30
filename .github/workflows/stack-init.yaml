@@ -51,15 +51,7 @@ jobs:
           npm run build 
           npm run env -- next export -o build
           
-      - name: set env var 
-        run: |
-          echo "repo_name=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
-          
-      - name: Replace Action
-        uses: datamonsters/replace-action@v2
-        with:
-          files: 'config/spec.yaml'
-          replacements: '<CURRENT_REPOSITORY_NAME>=${{env.repo_name}}'
+      
           
   deploy-to-do-apps:
     needs: setup
@@ -69,6 +61,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+          
+      - name: set env var 
+        run: |
+          echo "repo_name=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
+          
+      - name: Replace Action
+        uses: datamonsters/replace-action@v2
+        with:
+          files: 'config/spec.yaml'
+          replacements: '<CURRENT_REPOSITORY_NAME>=${{env.repo_name}}'
           
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
