@@ -1,5 +1,6 @@
 name: "provision stack build/ deploy to Digital Ocean"
-
+env:
+    REPO_NAME: ${GITHUB_REPOSITORY}
 on:
   workflow_dispatch:
     inputs:
@@ -59,7 +60,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@2.0.0
         with:
           find: "<CURRENT_REPOSITORY_NAME>"
-          replace: ${GITHUB_REPO}
+          replace: "${GITHUB_REPOSITORY}"
           include: "**spec.yaml"
           
       - name: Display file
@@ -68,6 +69,7 @@ jobs:
             echo ${GITHUB_REPOSITORY}
             echo $GITHUB_REPOSITORY
             echo "${GITHUB_REPOSITORY}"
+            echo $REPO_NAME
           
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
