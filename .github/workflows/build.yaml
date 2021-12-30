@@ -17,7 +17,7 @@ jobs:
        - name: Display file
          run: |
             echo ${GITHUB_REPOSITORY}
-            echo ${{ env.GITHUB_REPOSITORY }}
+            echo ${{ env }}
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
             
        - name: Replace Action
