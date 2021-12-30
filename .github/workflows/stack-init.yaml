@@ -55,7 +55,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "<CURRENT_REPOSITORY_NAME>"
-          replace: ${{GITHUB_REPOSITORY}}
+          replace: ${{ GITHUB_REPOSITORY }}
           include: "**spec.yaml" 
           
       - name: Install doctl
