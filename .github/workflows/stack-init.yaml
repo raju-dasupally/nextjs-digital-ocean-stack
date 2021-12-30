@@ -58,7 +58,7 @@ jobs:
       - name: Display file
         run: |
             cat config/spec.yaml
-            sed -i "s/<CURRENT_REPOSITORY_NAME>/${GITHUB_REPOSITORY}/g" config/spec.yaml
+            sed -i -e "s/<CURRENT_REPOSITORY_NAME>/${GITHUB_REPOSITORY}/g" config/spec.yaml
             cat config/spec.yaml
             echo ${GITHUB_REPOSITORY}
             echo $GITHUB_REPOSITORY
