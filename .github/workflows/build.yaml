@@ -20,9 +20,8 @@ jobs:
             echo 'repo_name=${GITHUB_REPOSITORY}' >> $GITHUB_ENV
             
             echo ${GITHUB_REPOSITORY}
-            echo ${{env.repo_name}}
-            
-            echo ${{ env }}
+            echo ${{ env.repo_name }}
+
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
             
        - name: Replace Action
