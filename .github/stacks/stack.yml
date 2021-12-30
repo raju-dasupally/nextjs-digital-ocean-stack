@@ -19,12 +19,6 @@ inputs:                                                  # stack inputs
     description: Enter the DigitalOcean Access Token. 
     is-secret: true
     required: true
-    
-  - name: CURRENT_REPOSITORY
-    description: Enter the current repository name. 
-    is-secret: true
-    required: true
-    
 
 configs:
   repo-metadata:
@@ -33,8 +27,6 @@ configs:
       secrets: 
       - name: DIGITAL_OCEAN_ACCESS_TOKEN
         value: ${{inputs.DIGITAL_OCEAN_ACCESS_TOKEN}}
-      - name: CURRENT_REPOSITORY
-        value: ${{inputs.CURRENT_REPOSITORY}}
       topics:
       - nextjs
       - github-pages
