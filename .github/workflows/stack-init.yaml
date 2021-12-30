@@ -51,6 +51,13 @@ jobs:
           npm run build 
           npm run env -- next export -o build
           
+      - name: Update Repository Name
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "<CURRENT_REPOSITORY_NAME>"
+          replace: ${{GITHUB_REPOSITORY}}
+          include: "**spec.yaml" 
+          
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
