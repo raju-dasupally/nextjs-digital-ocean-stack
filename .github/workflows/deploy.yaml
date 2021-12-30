@@ -4,6 +4,7 @@ on:
       - main
     paths:
       - '.github/workflows/**'
+      
 jobs:
   build:
     name: Build, push, and deploy
