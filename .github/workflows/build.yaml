@@ -21,7 +21,7 @@ jobs:
        - name: Replace Action
          uses: datamonsters/replace-action@v2
          with:
-            files: ${GITHUB_WORKSPACE}/config/spec.yaml
+            files: '${GITHUB_WORKSPACE}/config/spec.yaml'
             replacements: '<CURRENT_REPOSITORY_NAME>=${GITHUB_REPOSITORY}'
 
             
