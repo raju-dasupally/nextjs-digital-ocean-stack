@@ -50,21 +50,16 @@ jobs:
           npm install
           npm run build 
           npm run env -- next export -o build
-      
-      - name: Display file
-        run: |
-            cat config/spec.yaml
           
-      - name: Display file
+      - name: set env var 
         run: |
-            echo ${{ env.GITHUB_REPOSITORY }}
-            cat config/spec.yaml
-            sed -i -e "/<CURRENT_REPOSITORY_NAME>/${GITHUB_REPOSITORY}/" config/spec.yaml
-            cat config/spec.yaml
-            echo ${GITHUB_REPOSITORY}
-            echo $GITHUB_REPOSITORY
-            echo "${GITHUB_REPOSITORY}"
-            
+          echo "repo_name=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
+          
+      - name: Replace Action
+        uses: datamonsters/replace-action@v2
+        with:
+          files: 'config/spec.yaml'
+          replacements: '<CURRENT_REPOSITORY_NAME>=${{env.repo_name}}'
           
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
