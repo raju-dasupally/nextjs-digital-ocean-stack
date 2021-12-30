@@ -14,15 +14,17 @@ jobs:
          with:
            persist-credentials: false
            
-       - name: Display file
+       - name: set env var 
          run: |
             echo "repo_name=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
-            echo 'repo_name=${GITHUB_REPOSITORY}' >> $GITHUB_ENV
             
             echo ${GITHUB_REPOSITORY}
-            echo ${{ env.repo_name }}
 
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
+            
+       - name: Display env var repo
+         run: |
+            echo ${{env.repo_name}}
             
        - name: Replace Action
          uses: datamonsters/replace-action@v2
