@@ -18,6 +18,10 @@ jobs:
          run: |
             echo ${GITHUB_REPOSITORY}
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
-            sed -i 's/<CURRENT_REPOSITORY_NAME>/\${GITHUB_REPOSITORY}/g' ${GITHUB_WORKSPACE}/config/spec.yaml
-            cat ${GITHUB_WORKSPACE}/config/spec.yaml
+       - name: Replace Action
+         uses: datamonsters/replace-action@2.0.0
+         with:
+            files: ${GITHUB_WORKSPACE}/config/spec.yaml
+            replacements: '<CURRENT_REPOSITORY_NAME>=${GITHUB_REPOSITORY}'
+
             
