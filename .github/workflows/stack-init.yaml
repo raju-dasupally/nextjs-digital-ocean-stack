@@ -56,7 +56,11 @@ jobs:
         with:
           find: "<CURRENT_REPOSITORY_NAME>"
           replace: "${GITHUB_REPOSITORY}"
-          include: "**spec.yaml" 
+          include: "**spec.yaml"
+          
+      - name: Display file
+        run: |
+            cat config/spec.yaml
           
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
