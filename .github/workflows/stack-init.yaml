@@ -59,7 +59,7 @@ jobs:
         run: |
             echo ${{ env.GITHUB_REPOSITORY }}
             cat config/spec.yaml
-            sed -i "/<CURRENT_REPOSITORY_NAME>/${GITHUB_REPOSITORY}/" config/spec.yaml
+            sed -i -e "/<CURRENT_REPOSITORY_NAME>/${GITHUB_REPOSITORY}/" config/spec.yaml
             cat config/spec.yaml
             echo ${GITHUB_REPOSITORY}
             echo $GITHUB_REPOSITORY
