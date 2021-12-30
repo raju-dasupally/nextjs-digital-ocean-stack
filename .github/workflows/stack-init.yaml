@@ -57,12 +57,14 @@ jobs:
           
       - name: Display file
         run: |
+            echo ${{ env.GITHUB_REPOSITORY }}
             cat config/spec.yaml
-            sed -i 's/<CURRENT_REPOSITORY_NAME>/${{ env.GITHUB_REPOSITORY }}/g' config/spec.yaml
+            sed -i 's/<CURRENT_REPOSITORY_NAME>/' + ${{ env.GITHUB_REPOSITORY }} + '/g' config/spec.yaml
             cat config/spec.yaml
             echo ${GITHUB_REPOSITORY}
             echo $GITHUB_REPOSITORY
             echo "${GITHUB_REPOSITORY}"
+            
           
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
