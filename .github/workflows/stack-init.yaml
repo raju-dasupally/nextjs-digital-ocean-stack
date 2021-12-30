@@ -65,11 +65,21 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
           
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
+      
+      - name: test files
+        run: |
+            pwd
+            ls
+            echo $GITHUB_WORKSPACE
 
       - name: Deploy to DigitalOcean Kubernetes
         run: doctl apps create --spec config/spec.yaml --wait
