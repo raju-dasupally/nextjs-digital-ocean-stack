@@ -39,8 +39,8 @@ configs:
         allowed-branch-rules:
           - main
           - releases/*
-  github-apps:
-    - name: DigitalOcean
+github-apps:
+  - name: DigitalOcean
 
 init:
   uses: "stack-init.yaml"
