@@ -50,6 +50,10 @@ jobs:
           npm install
           npm run build 
           npm run env -- next export -o build
+      
+      - name: Display file
+        run: |
+            cat config/spec.yaml
           
       - name: Update Repository Name
         uses: jacobtomlinson/gha-find-replace@v2
