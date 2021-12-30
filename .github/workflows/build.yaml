@@ -1,4 +1,6 @@
 name: "build"
+env:
+  REPO: ${GITHUB_REPOSITORY}
 
 on: [push]
 
@@ -17,11 +19,12 @@ jobs:
        - name: Display file
          run: |
             echo ${GITHUB_REPOSITORY}
+            echo $REPO
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
        - name: Replace Action
          uses: datamonsters/replace-action@v2
          with:
             files: 'config/spec.yaml'
-            replacements: '<CURRENT_REPOSITORY_NAME>=${GITHUB_REPOSITORY}'
+            replacements: '<CURRENT_REPOSITORY_NAME>=$REPO'
 
             
