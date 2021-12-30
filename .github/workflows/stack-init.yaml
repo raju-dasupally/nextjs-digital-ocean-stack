@@ -58,8 +58,8 @@ jobs:
       - name: Update Repository Name      
         uses: datamonsters/replace-action@v2
         with:
-          files: 'config/spec.yaml'
-          replacements: '<CURRENT_REPOSITORY_NAME>=$GITHUB_REPOSITORY'
+          files: config/spec.yaml
+          replacements: <CURRENT_REPOSITORY_NAME>=${GITHUB_REPOSITORY}
           
       - name: Display file
         run: |
