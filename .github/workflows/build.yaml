@@ -16,7 +16,12 @@ jobs:
            
        - name: Display file
          run: |
+            echo "repo_name=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
+            echo 'repo_name=${GITHUB_REPOSITORY}' >> $GITHUB_ENV
+            
             echo ${GITHUB_REPOSITORY}
+            echo ${{env.repo_name}}
+            
             echo ${{ env }}
             cat ${GITHUB_WORKSPACE}/config/spec.yaml
             
@@ -24,6 +29,6 @@ jobs:
          uses: datamonsters/replace-action@v2
          with:
             files: 'config/spec.yaml'
-            replacements: '<CURRENT_REPOSITORY_NAME>=$REPO'
+            replacements: '<CURRENT_REPOSITORY_NAME>=${{env.repo_name}}'
 
             
