@@ -54,13 +54,12 @@ jobs:
       - name: Display file
         run: |
             cat config/spec.yaml
-          
-      - name: Update Repository Name
-        uses: jacobtomlinson/gha-find-replace@v2
+            
+      - name: Update Repository Name      
+        uses: datamonsters/replace-action@v2
         with:
-          find: "<CURRENT_REPOSITORY_NAME>"
-          replace: ${GITHUB_REPOSITORY}
-          include: "**spec.yaml"
+          files: 'config/spec.yaml'
+          replacements: '<CURRENT_REPOSITORY_NAME>=${GITHUB_REPOSITORY}'
           
       - name: Display file
         run: |
