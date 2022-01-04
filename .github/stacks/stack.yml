@@ -41,7 +41,7 @@ configs:
           - releases/*
 
 github-apps:
-- slug: azure
+- slug: digitalocean
 
 init:
   uses: "stack-init.yaml"
