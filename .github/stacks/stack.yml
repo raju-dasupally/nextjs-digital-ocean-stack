@@ -41,7 +41,7 @@ configs:
           - releases/*
           
 github-apps:
-- slug: Sider  
+  - slug: Sider  
 
 init:
   uses: "stack-init.yaml"
