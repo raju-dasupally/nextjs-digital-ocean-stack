@@ -40,7 +40,7 @@ configs:
           - main
           - releases/*
           
-github-apps:
+github-app:
   - slug: digitalocean  
 
 init:
