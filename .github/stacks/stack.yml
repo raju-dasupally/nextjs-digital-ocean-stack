@@ -39,6 +39,7 @@ configs:
         allowed-branch-rules:
           - main
           - releases/*
+          
 github-apps:
   - slug: digitalocean  
 
