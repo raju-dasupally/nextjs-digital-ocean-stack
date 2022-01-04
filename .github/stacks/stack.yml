@@ -42,8 +42,6 @@ configs:
 
 github-apps:
 - slug: digitalocean
-  parameters:
-      environment: production
 
 init:
   uses: "stack-init.yaml"
