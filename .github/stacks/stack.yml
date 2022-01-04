@@ -40,7 +40,6 @@ configs:
           - main
           - releases/*
 github-apps:
-  # Automatically close stale Issues and Pull Requests that tend to accumulate during a project.
   - slug: digitalocean  
 
 init:
